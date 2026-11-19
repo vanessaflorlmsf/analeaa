@@ -357,6 +357,23 @@
       .image-placeholder { aspect-ratio: 1 / 1; background-position: 70% center; }
       .image-placeholder::after { inset: 10px; }
     }
+  
+    /* ===== Promoção Primeiro Contato ===== */
+    .promo { background: linear-gradient(135deg, #102b23, #173d32); color: #fff; padding: 48px 28px; }
+    .promo-card { border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 36px; }
+    .promo-box { max-width: 820px; margin: auto; text-align: center; }
+    .promo-tag { display: inline-block; background: #e0245e; color: #fff; font-weight: 800; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; padding: 8px 16px; border-radius: 999px; }
+    .promo h2 { color: #fff; margin: 18px 0 14px; }
+    .promo p { color: rgba(255,255,255,.82); font-size: 1.08rem; }
+    .promo p strong { color: #fff; }
+    .promo-price { margin: 26px 0 8px; font-family: Georgia, serif; }
+    .promo-price s { color: rgba(255,255,255,.55); font-size: 1.3rem; margin-right: 10px; }
+    .promo-price b { color: var(--gold); font-size: clamp(2.8rem, 9vw, 4.4rem); font-weight: 500; }
+    .promo-price small { display: block; font: .85rem Inter, sans-serif; color: rgba(255,255,255,.7); margin-top: 4px; }
+    .btn-promo { background: linear-gradient(135deg, #ff2d78, #d4145a); color: #fff; font-size: 1.2rem; font-weight: 800; padding: 20px 40px; width: min(100%, 480px); box-shadow: 0 14px 34px rgba(224,36,94,.45); margin-top: 18px; }
+    .btn-promo:hover { filter: brightness(1.08); }
+    .promo p.promo-micro { font-size: .78rem; color: rgba(255,255,255,.6); margin-top: 12px; }
+    .promo p.promo-urgency { display: inline-block; margin-top: 22px; padding: 10px 18px; border: 1px dashed rgba(195,163,106,.7); border-radius: 14px; font-size: .92rem; }
   </style>
 </head>
 <body>
@@ -385,8 +402,8 @@
           <h1>Sua mente não precisa continuar vivendo no automático.</h1>
           <p>Um convite para compreender seus padrões, desenvolver habilidades cognitivas e emocionais e construir uma relação mais consciente consigo mesma.</p>
           <div class="hero-actions">
-            <a class="btn" href="#agendar">Quero conhecer o método <span>↗</span></a>
-            <a class="btn btn-outline" href="#metodo">Descobrir como funciona</a>
+            <a class="btn" href="#metodo">Quero conhecer o método <span>↗</span></a>
+            <a class="btn btn-outline" href="#encontros">Descobrir como funciona</a>
           </div>
           <p class="hero-note">Você não precisa chegar ao seu limite para decidir que merece cuidado.</p>
         </div>
@@ -411,7 +428,7 @@
           <p>Talvez você passe o dia cuidando do trabalho, da casa, da família e de tantas responsabilidades. Quando percebe, suas próprias necessidades ficaram para depois.</p>
           <p>O Método Reagir propõe uma pausa para olhar para seus hábitos, emoções, objetivos e possibilidades de mudança — sem culpa e sem exigir perfeição.</p>
           <div class="quote">“Não é sobre mudar tudo de uma vez. É sobre começar a fazer escolhas mais conscientes.”</div>
-          <a class="btn" href="#agendar">Dar o primeiro passo</a>
+          <a class="btn" href="#investimento">Dar o primeiro passo</a>
         </div>
       </div>
     </section>
@@ -498,15 +515,30 @@
           <h2>Escolha seu próximo passo.</h2>
           <p>Converse para entender qual formato faz mais sentido para seus objetivos.</p>
         </div>
+        <div class="promo promo-card" id="promocao">
+          <div class="promo-box">
+          <span class="promo-tag">Oferta de primeiro contato</span>
+          <h2>Você não precisa de terapia pra vida toda pra começar a mudar.</h2>
+          <p><strong>Você precisa de UMA conversa certa.</strong></p>
+          <p>No seu Primeiro Contato do Método REAGIR, eu vou te mostrar exatamente por que você explode, se arrepende e depois se culpa. E te dar o seu primeiro plano de pausa.</p>
+          <div class="promo-price">
+            <s>De R$ 150</s> <b>R$ 49,90</b>
+            <small>só para o primeiro contato</small>
+          </div>
+          <a class="btn btn-promo" id="promo-btn" href="#agendar">Quero meu Primeiro Contato por R$ 49,90 ↗</a>
+          <p class="promo-micro">Sem compromisso · Pagamento seguro online</p>
+          <p class="promo-urgency">Vagas limitadas por semana. Quando acabar, volta pro valor normal.</p>
+          </div>
+        </div>
         <div class="pricing">
-          <article class="price-card">
+          <article class="price-card" data-id="individual">
             <span class="eyebrow">Para começar</span>
             <h3>Sessão individual</h3>
-            <div class="price">R$ 159,90</div>
+            <div class="price">R$ 159,00</div>
             <p>Um encontro para conhecer sua história, compreender suas necessidades e conversar sobre seus objetivos.</p>
             <a class="btn" href="#agendar">Tenho interesse</a>
           </article>
-          <article class="price-card featured">
+          <article class="price-card featured" data-id="pacote">
             <span class="eyebrow">Percurso contínuo</span>
             <h3>Pacote Transformação</h3>
             <div class="price">R$ 650,00</div>
@@ -523,7 +555,7 @@
         <div class="section-head">
           <span class="eyebrow">Agendamento online</span>
           <h2>Reserve seu horário em poucos minutos.</h2>
-          <p>Escolha o formato, o dia e o horário. Para garantir sua vaga, o agendamento é confirmado com um sinal de <strong>30%</strong> pago por Pix. O restante é combinado para o dia do atendimento.</p>
+          <p>Escolha o formato, o dia e o horário. Para confirmar o agendamento, finalize o <strong>pagamento pelo link seguro</strong> do atendimento escolhido.</p>
         </div>
 
         <div class="booking-wrap">
@@ -565,37 +597,29 @@
             <div class="summary" id="summary" aria-live="polite">
               <div class="row"><span>Atendimento</span><strong id="s-service">—</strong></div>
               <div class="row"><span>Data e horário</span><strong id="s-when">—</strong></div>
-              <div class="row"><span>Valor total</span><strong id="s-total">—</strong></div>
-              <div class="row sinal"><span>Sinal hoje (30%)</span><strong id="s-sinal">—</strong></div>
+              <div class="row"><span>Valor</span><strong id="s-total">—</strong></div>
             </div>
             <p class="b-error" id="b-error" role="alert"></p>
-            <button type="submit" class="btn b-submit">Pagar sinal via Pix e reservar ↗</button>
-            <p class="b-secure">O horário fica reservado após o envio do comprovante do Pix.</p>
+            <button type="submit" class="btn b-submit">Ir para o pagamento e confirmar ↗</button>
+            <p class="b-secure">O agendamento é confirmado após o pagamento.</p>
           </form>
 
           <div class="pix-panel" id="pix-panel">
             <div class="pix-head">
               <span class="eyebrow">Quase lá</span>
-              <h3>Pague o sinal de <span id="p-valor"></span></h3>
+              <h3>Finalize o pagamento de <span id="p-valor"></span></h3>
               <p id="p-resumo"></p>
             </div>
-            <div class="pix-grid">
-              <div class="qr-box" id="qr-box" aria-label="QR Code Pix"></div>
-              <div>
-                <label for="pix-code" style="font-weight:700;color:var(--green);font-size:.85rem">Pix copia e cola</label>
-                <textarea id="pix-code" class="pix-code" readonly></textarea>
-                <div class="pix-actions">
-                  <button type="button" class="btn btn-dark" id="copy-pix">Copiar código Pix</button>
-                  <a class="btn btn-wpp" id="send-proof" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16.004 3C9.373 3 4 8.373 4 15c0 2.385.668 4.61 1.832 6.504L4 29l7.7-1.797A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.8a9.77 9.77 0 0 1-4.98-1.363l-.357-.213-3.67.857.88-3.57-.233-.367A9.77 9.77 0 0 1 6.2 15c0-5.413 4.39-9.8 9.804-9.8 5.41 0 9.796 4.387 9.796 9.8s-4.386 9.8-9.796 9.8zm5.37-7.34c-.294-.147-1.74-.858-2.01-.956-.27-.098-.466-.147-.662.148-.196.294-.76.956-.932 1.153-.172.196-.343.22-.637.073-.294-.147-1.242-.458-2.366-1.46-.874-.78-1.465-1.744-1.637-2.038-.172-.294-.018-.453.13-.6.132-.132.294-.343.44-.515.148-.172.197-.294.295-.49.098-.197.05-.368-.025-.515-.074-.147-.662-1.595-.907-2.184-.238-.574-.48-.496-.662-.505l-.564-.01c-.196 0-.515.073-.785.368-.27.294-1.03 1.007-1.03 2.455s1.055 2.848 1.202 3.044c.147.196 2.077 3.172 5.03 4.448.703.303 1.25.484 1.677.62.705.224 1.347.192 1.855.117.566-.084 1.74-.711 1.986-1.398.245-.687.245-1.276.172-1.398-.073-.123-.27-.196-.564-.343z"/></svg> Enviar comprovante no WhatsApp</a>
-                </div>
-              </div>
+            <div class="pix-actions" style="justify-content:center">
+              <a class="btn" id="pay-link" href="#" target="_blank" rel="noopener">Pagar agora ↗</a>
+              <a class="btn btn-wpp" id="send-proof" href="#" target="_blank" rel="noopener">Enviar comprovante no WhatsApp</a>
             </div>
             <div class="pix-steps">
-              <strong style="color:var(--green)">Como finalizar sua reserva</strong>
+              <strong style="color:var(--green)">Como confirmar seu agendamento</strong>
               <ol>
-                <li>Abra o app do seu banco e escolha Pix, lendo o QR Code ou colando o código.</li>
-                <li>Confira o valor e o nome do recebedor e conclua o pagamento.</li>
-                <li>Clique em <b>Enviar comprovante no WhatsApp</b> para confirmarmos seu horário.</li>
+                <li>Clique em <b>Pagar agora</b> e conclua o pagamento na página segura.</li>
+                <li>Depois de pagar, clique em <b>Enviar comprovante no WhatsApp</b>.</li>
+                <li>Pronto! Vamos confirmar seu horário por lá.</li>
               </ol>
             </div>
             <button type="button" class="back-link" id="back-edit">← Alterar dados do agendamento</button>
@@ -1924,16 +1948,17 @@ window.pixQR = function (text, size) {
       pixKey: "analeaneuromente@gmail.com", // chave Pix (e-mail)
       pixName: "ANA LEA AMARAL MINGUINS", // nome do recebedor (sem acentos, até 25 caracteres)
       pixCity: "FORTALEZA",               // cidade (sem acentos, até 15 caracteres)
-      depositPercent: 30,                 // percentual do sinal
       daysAhead: 21,                      // quantos dias à frente mostrar
       closedWeekdays: [0],                // dias sem atendimento: 0=dom, 1=seg ... 6=sáb
       minNoticeHours: 12,                 // antecedência mínima para agendar
       slotMinutes: 60,                    // duração de cada atendimento
       slots: ["08:00","09:00","10:00","11:00"],
       saturdaySlots: ["08:00","09:00","10:00","11:00"],
+      // payUrl = link de pagamento de cada atendimento
       services: [
-        { id: "individual", name: "Sessão individual", priceCents: 15990, desc: "Um encontro para conhecer sua história e seus objetivos." },
-        { id: "pacote", name: "Pacote Transformação", priceCents: 65000, desc: "6 sessões de acompanhamento. O sinal reserva o primeiro encontro." }
+        { id: "primeiro-contato", name: "Primeiro Contato (promoção)", priceCents: 4990, payUrl: "https://pag.ae/82n4cJEG2", desc: "Uma conversa para entender seus padrões e sair com seu primeiro plano de pausa." },
+        { id: "individual", name: "Sessão individual", priceCents: 15900, payUrl: "https://pag.ae/82n44-ir6", desc: "Um encontro para conhecer sua história e seus objetivos." },
+        { id: "pacote", name: "Pacote Transformação", priceCents: 65000, payUrl: "https://pag.ae/8263kZwGa", desc: "6 sessões de acompanhamento com atividades práticas." }
       ]
     };
 
@@ -1948,7 +1973,6 @@ window.pixQR = function (text, size) {
     const slotRange = t => { const [h, m] = t.split(":").map(Number); const e = h * 60 + m + CONFIG.slotMinutes; return t + " às " + pad(Math.floor(e / 60)) + ":" + pad(e % 60); };
     const dateKey = d => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
     const fmtDate = d => wdLong[d.getDay()] + ", " + pad(d.getDate()) + "/" + pad(d.getMonth() + 1);
-    const depositCents = svc => Math.round(svc.priceCents * CONFIG.depositPercent / 100);
 
     // todos os botões de WhatsApp (data-wa="mensagem") usam o número configurado acima
     const waLink = msg => "https://wa.me/" + CONFIG.whatsapp.replace(/\D/g, "") + (msg ? "?text=" + encodeURIComponent(msg) : "");
@@ -1960,20 +1984,22 @@ window.pixQR = function (text, size) {
       const b = document.createElement("button");
       b.type = "button"; b.className = "opt"; b.dataset.id = svc.id;
       b.innerHTML = "<b>" + svc.name + "</b><div class='o-price'>" + brl(svc.priceCents) + "</div>" +
-        "<small>Sinal de " + brl(depositCents(svc)) + " (" + CONFIG.depositPercent + "%)</small><small style='margin-top:6px'>" + svc.desc + "</small>";
+        "<small>" + svc.desc + "</small>";
       b.addEventListener("click", () => { state.service = svc; markActive(svcBox, b); updateSummary(); });
       svcBox.appendChild(b);
     });
 
     // pré-seleciona o serviço ao clicar nos botões da seção de valores
-    document.querySelectorAll(".price-card .btn").forEach((btn, i) => {
-      btn.addEventListener("click", () => {
-        const svc = CONFIG.services[i]; if (!svc) return;
-        state.service = svc;
-        markActive(svcBox, svcBox.querySelector('[data-id="' + svc.id + '"]'));
-        updateSummary();
-      });
+    const pick = id => {
+      const svc = CONFIG.services.find(x => x.id === id); if (!svc) return;
+      state.service = svc;
+      markActive(svcBox, svcBox.querySelector('[data-id="' + id + '"]'));
+      updateSummary();
+    };
+    document.querySelectorAll(".price-card").forEach(card => {
+      card.querySelector(".btn").addEventListener("click", () => pick(card.dataset.id));
     });
+    $("promo-btn").addEventListener("click", () => pick("primeiro-contato"));
 
     function markActive(container, el) {
       container.querySelectorAll(".active").forEach(x => x.classList.remove("active"));
@@ -2017,7 +2043,6 @@ window.pixQR = function (text, size) {
       $("s-service").textContent = state.service ? state.service.name : "—";
       $("s-when").textContent = state.date ? fmtDate(state.date) + (state.time ? " · " + slotRange(state.time) : "") : "—";
       $("s-total").textContent = state.service ? brl(state.service.priceCents) : "—";
-      $("s-sinal").textContent = state.service ? brl(depositCents(state.service)) : "—";
     }
 
     /* ---------- máscara do WhatsApp ---------- */
@@ -2027,29 +2052,6 @@ window.pixQR = function (text, size) {
       else if (v.length > 2) v = "(" + v.slice(0,2) + ") " + v.slice(2);
       e.target.value = v;
     });
-
-    /* ---------- Pix (BR Code estático com CRC16) ---------- */
-    function tlv(id, value) { return id + pad(value.length) + value; }
-    function crc16(str) {
-      let crc = 0xFFFF;
-      for (let i = 0; i < str.length; i++) {
-        crc ^= str.charCodeAt(i) << 8;
-        for (let j = 0; j < 8; j++) crc = (crc & 0x8000) ? ((crc << 1) ^ 0x1021) & 0xFFFF : (crc << 1) & 0xFFFF;
-      }
-      return crc.toString(16).toUpperCase().padStart(4, "0");
-    }
-    function clean(t, max) {
-      return t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^A-Za-z0-9 ]/g, "").toUpperCase().slice(0, max).trim();
-    }
-    function buildPix(cents, txid) {
-      const account = tlv("00", "br.gov.bcb.pix") + tlv("01", CONFIG.pixKey.trim());
-      const payload =
-        tlv("00", "01") + tlv("01", "11") + tlv("26", account) + tlv("52", "0000") + tlv("53", "986") +
-        tlv("54", (cents / 100).toFixed(2)) + tlv("58", "BR") +
-        tlv("59", clean(CONFIG.pixName, 25)) + tlv("60", clean(CONFIG.pixCity, 15)) +
-        tlv("62", tlv("05", txid)) + "6304";
-      return payload + crc16(payload);
-    }
 
     /* ---------- envio do formulário ---------- */
     const form = $("booking-form"), panel = $("pix-panel"), err = $("b-error");
@@ -2064,21 +2066,14 @@ window.pixQR = function (text, size) {
       if (digits.length < 10) return fail("Informe um WhatsApp válido com DDD.");
       err.textContent = "";
 
-      const cents = depositCents(state.service);
-      const txid = ("REAGIR" + dateKey(state.date).replace(/-/g, "") + state.time.replace(":", "") + digits.slice(-4)).slice(0, 25);
-      const code = buildPix(cents, txid);
+      const cents = state.service.priceCents;
       const when = fmtDate(state.date) + " · " + slotRange(state.time);
 
       $("p-valor").textContent = brl(cents);
       $("p-resumo").textContent = state.service.name + " · " + when;
-      $("pix-code").value = code;
+      $("pay-link").href = state.service.payUrl;
 
-      const qr = $("qr-box"); qr.innerHTML = "";
-      const canvas = window.pixQR ? window.pixQR(code, 400) : null;
-      if (canvas) qr.appendChild(canvas);
-      else qr.innerHTML = "<span style='font-size:.85rem;color:var(--muted);text-align:center'>Use o Pix copia e cola ao lado.</span>";
-
-      const msg = "Olá! Acabei de pagar o sinal de " + brl(cents) + " (" + CONFIG.depositPercent + "%) via Pix para reservar meu horário no Método Reagir.\n\n" +
+      const msg = "Olá! Acabei de pagar " + brl(cents) + " para confirmar meu agendamento no Método Reagir.\n\n" +
         "• Atendimento: " + state.service.name + "\n• Data: " + when + "\n• Nome: " + nome + "\n• WhatsApp: " + whats +
         ($("b-obs").value.trim() ? "\n• Observação: " + $("b-obs").value.trim() : "") + "\n\nSegue o comprovante em anexo.";
       $("send-proof").href = waLink(msg);
@@ -2088,11 +2083,6 @@ window.pixQR = function (text, size) {
     });
     function fail(m) { err.textContent = m; err.scrollIntoView({ behavior: "smooth", block: "center" }); return false; }
 
-    $("copy-pix").addEventListener("click", async () => {
-      const el = $("pix-code"), btn = $("copy-pix");
-      try { await navigator.clipboard.writeText(el.value); } catch (_) { el.select(); document.execCommand("copy"); }
-      btn.textContent = "Código copiado ✓"; setTimeout(() => btn.textContent = "Copiar código Pix", 2500);
-    });
     $("back-edit").addEventListener("click", () => { panel.classList.remove("show"); form.style.display = ""; });
   </script>
 </body>
